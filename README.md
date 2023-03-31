@@ -1,6 +1,6 @@
 # Voice Enabled Virtual Interviewer
 
-<strong>Domain</strong>: AI
+<strong>Domain</strong>: Artificial Intelligence
 
 <strong>Objective</strong>: Develop an interviewing system that helps students to prepare for technical interviews. 
 The system shall be voice enabled and the virtual interviewer shall be Alexa skill with ChatGPT and Sentimental Analysis algorithms as evaluators.
