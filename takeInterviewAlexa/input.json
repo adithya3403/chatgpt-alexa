@@ -1,0 +1,188 @@
+{
+    "version": "1.0",
+    "session": {
+        "new": false,
+        "sessionId": "amzn1.echo-api.session.1b93fd95-973b-46ae-8715-9ff878879f15",
+        "application": {
+            "applicationId": "amzn1.ask.skill.c854fc66-f209-4133-b719-8953c78c9352"
+        },
+        "attributes": {
+            "loginid": "503130",
+            "score2": 10,
+            "score4": 0,
+            "score5": 10,
+            "questions": [
+                "What is the difference between a list and a tuple in Python?",
+                "What is the purpose of the break statement in Python?",
+                "What is the purpose of the continue statement in Python?",
+                "What is the difference between shallow and deep copy in Python?",
+                "What is the purpose of the pass statement in Python?"
+            ],
+            "question3": "What is the purpose of the continue statement in Python?",
+            "answer3": "continue statement is useful when we want to skip a particular point",
+            "question2": "What is the purpose of the break statement in Python?",
+            "answer2": "break statement is used to stop the working flow in loops",
+            "question5": "What is the purpose of the pass statement in Python?",
+            "answer5": "pass statement is used when we have done our work it is similar to do nothing",
+            "question4": "What is the difference between shallow and deep copy in Python?",
+            "answer4": "shallow copy just gets an upper layer kind of copy but deep copy gets all the topics covered",
+            "question1": "What is the difference between a list and a tuple in Python?",
+            "answer1": "tuples cannot be edited after their creation but lists can be edited",
+            "password": "3VVGC7D7",
+            "name": "ramu",
+            "topic": "Python",
+            "score1": 10,
+            "status": "login"
+        },
+        "user": {
+            "userId": "amzn1.ask.account.AHBL6PZWIN4USW63FBM4DO6FCSLQ7NGCKEXIEFMD2X3ZN7PSYROKM57V4O3I2GO5QNYTMFJ6D543M7OYXQI3OENFE5CIOWC2BKRKLBXKXOLOZYSYG5YF6CO7HYEE63UTMSSQMLEMU2F2HSFFRRYDAH7ORKVTU3ENCFALQUMPLCTATC2VMFDI3VKQ4ZSOP6LY5IC6XUZWHJP3SLA"
+        }
+    },
+    "context": {
+        "Viewports": [
+            {
+                "type": "APL",
+                "id": "main",
+                "shape": "RECTANGLE",
+                "dpi": 213,
+                "presentationType": "STANDARD",
+                "canRotate": false,
+                "configuration": {
+                    "current": {
+                        "mode": "HUB",
+                        "video": {
+                            "codecs": [
+                                "H_264_42",
+                                "H_264_41"
+                            ]
+                        },
+                        "size": {
+                            "type": "DISCRETE",
+                            "pixelWidth": 1280,
+                            "pixelHeight": 800
+                        }
+                    }
+                }
+            }
+        ],
+        "AudioPlayer": {
+            "playerActivity": "IDLE"
+        },
+        "Viewport": {
+            "experiences": [
+                {
+                    "arcMinuteWidth": 346,
+                    "arcMinuteHeight": 216,
+                    "canRotate": false,
+                    "canResize": false
+                }
+            ],
+            "mode": "HUB",
+            "shape": "RECTANGLE",
+            "pixelWidth": 1280,
+            "pixelHeight": 800,
+            "dpi": 213,
+            "currentPixelWidth": 1280,
+            "currentPixelHeight": 800,
+            "touch": [
+                "SINGLE"
+            ],
+            "video": {
+                "codecs": [
+                    "H_264_42",
+                    "H_264_41"
+                ]
+            }
+        },
+        "Extensions": {
+            "available": {
+                "aplext:backstack:10": {}
+            }
+        },
+        "System": {
+            "application": {
+                "applicationId": "amzn1.ask.skill.c854fc66-f209-4133-b719-8953c78c9352"
+            },
+            "user": {
+                "userId": "amzn1.ask.account.AHBL6PZWIN4USW63FBM4DO6FCSLQ7NGCKEXIEFMD2X3ZN7PSYROKM57V4O3I2GO5QNYTMFJ6D543M7OYXQI3OENFE5CIOWC2BKRKLBXKXOLOZYSYG5YF6CO7HYEE63UTMSSQMLEMU2F2HSFFRRYDAH7ORKVTU3ENCFALQUMPLCTATC2VMFDI3VKQ4ZSOP6LY5IC6XUZWHJP3SLA"
+            },
+            "device": {
+                "deviceId": "amzn1.ask.device.AFKLE623BKFX5JYICZZ57HOHDWET56XVQRDSUFDUEFFNKH4E4CWCWOM7INNMGRFY3YOFXO53FEJMVEYOR6T4VPAGLBMINJFLQH4A2XNTUBYFXSVTG356CHZU3LLFPAAQVCO6X4Y4Q5EN5VPBEEV2KNGUTTAF7C47CILFGXIGGGB6EQYAJFRU4",
+                "supportedInterfaces": {
+                    "AudioPlayer": {},
+                    "Alexa.Presentation.APL": {
+                        "runtime": {
+                            "maxVersion": "2023.1"
+                        }
+                    }
+                }
+            },
+            "apiEndpoint": "https://api.eu.amazonalexa.com",
+            "apiAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5ldS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLmM4NTRmYzY2LWYyMDktNDEzMy1iNzE5LTg5NTNjNzhjOTM1MiIsImV4cCI6MTY3OTgzMDMzNiwiaWF0IjoxNjc5ODMwMDM2LCJuYmYiOjE2Nzk4MzAwMzYsInByaXZhdGVDbGFpbXMiOnsiY29udGV4dCI6IkFBQUFBQUFBQVFBRUNYSmVwQnlFQ1orcjdPVmZTcEd2S2dFQUFBQUFBQUJBU01RcDhZdU1NQ0pvUEVzNzExR1ZrdDhhVzE3K29QdWh2VmgwaFkzbndIbjlMYkszRlNkc2VpTjM5UHgvakhkZnBiYVcyMkQzL3pFMGxlb243bm9DbmsyTjJDMEtVRlQzT2NWY2JtdkNid2xDRm0yWWJ2VWNFQnVaWEQrVE8yQ09VU3pDUG5rWTNtNHlwQU01VTVTT2NVblRCN3pvRUVTSXlJSU5rK3h0bkRIckUxYThnT1pPRjB5bjlZY2dVN0lBQXZhalpYbUxvWmErNzZjalByM2h5cld6YzhJL0IyMDBqeWF2RlNIMDhTSFNUZ1ViYWhCbnMvZE9IK3A1NWUrWDF5TjlOdG1KUXpzODZjR0pxcWdoMU9qR3IxQWFIMWZVZEJjQ0Y0eFExcFE3YzVyL3RzVTgvUWIwMW5HNEhSTzFqdDVidk9UY2lyQ2J1L3ZRSU5PSTlKQUJmcDVuUytrTlZIanpyRkFXakVRNEwxWWpudlBpMWNEQ3ZIL0k2eDVUN3NPOUtKSTN6L013IiwiZGV2aWNlSWQiOiJhbXpuMS5hc2suZGV2aWNlLkFGS0xFNjIzQktGWDVKWUlDWlo1N0hPSERXRVQ1NlhWUVJEU1VGRFVFRkZOS0g0RTRDV0NXT003SU5OTUdSRlkzWU9GWE81M0ZFSk1WRVlPUjZUNFZQQUdMQk1JTkpGTFFINEEyWE5UVUJZRlhTVlRHMzU2Q0haVTNMTEZQQUFRVkNPNlg0WTRRNUVONVZQQkVFVjJLTkdVVFRBRjdDNDdDSUxGR1hJR0dHQjZFUVlBSkZSVTQiLCJ1c2VySWQiOiJhbXpuMS5hc2suYWNjb3VudC5BSEJMNlBaV0lONFVTVzYzRkJNNERPNkZDU0xRN05HQ0tFWElFRk1EMlgzWk43UFNZUk9LTTU3VjRPM0kyR081UU5ZVE1GSjZENTQzTTdPWVhRSTNPRU5GRTVDSU9XQzJCS1JLTEJYS1hPTE9aWVNZRzVZRjZDTzdIWUVFNjNVVE1TU1FNTEVNVTJGMkhTRkZSUllEQUg3T1JLVlRVM0VOQ0ZBTFFVTVBMQ1RBVEMyVk1GREkzVktRNFpTT1A2TFk1SUM2WFVaV0hKUDNTTEEifX0.JgBs-cy3JqRzmVFX58lKK4pVS1MRe9M92oHhv0dtzuxRHuw-36MA9ngCUStLliobTHIugMH8-JmBrk6mV3P39BQzF7s7LbrqyqHiLw9gs2OU2jASVl09BprzBBRSa3Z0gJ1fce8Fc3IB9pe2ZmUnHMg-_kXN2m0k-Toq114ct-TCdN6ClrKDG1rTx33ywMBeu7qGaLUTUppdXT8TIozadGy9pEyqqwM-mcMF6Diiegx0vvQCOlSOMsnDBL1ekCPTDOuc0jbu9TB5sxTp1FbH34pUZC_QM1F1XGn1sx_vfsg-MLW-h0RmFZdV0rvfq94u9S6vUCigzBEqzRfCSb-vbQ"
+        },
+        "Alexa.Presentation.APL": {
+            "token": "",
+            "version": "APL_WEB_RENDERER_GANDALF",
+            "componentsVisibleOnScreen": [
+                {
+                    "uid": ":1176",
+                    "position": "960x600+0+0:0",
+                    "type": "mixed",
+                    "tags": {
+                        "viewport": {}
+                    },
+                    "children": [
+                        {
+                            "uid": ":1177",
+                            "position": "960x600+0+0:0",
+                            "type": "graphic",
+                            "tags": {},
+                            "entities": []
+                        },
+                        {
+                            "uid": ":1179",
+                            "position": "960x87+0+0:1",
+                            "type": "mixed",
+                            "tags": {},
+                            "entities": []
+                        },
+                        {
+                            "uid": ":1186",
+                            "position": "960x513+0+87:1",
+                            "type": "mixed",
+                            "tags": {
+                                "focused": false,
+                                "scrollable": {
+                                    "direction": "vertical",
+                                    "allowForward": true,
+                                    "allowBackwards": false
+                                }
+                            },
+                            "children": [
+                                {
+                                    "uid": ":1194",
+                                    "position": "307x307+588+87:1",
+                                    "type": "empty",
+                                    "tags": {},
+                                    "entities": []
+                                }
+                            ],
+                            "entities": []
+                        }
+                    ],
+                    "entities": []
+                }
+            ]
+        }
+    },
+    "request": {
+        "type": "IntentRequest",
+        "requestId": "amzn1.echo-api.request.d3651da6-8ee5-4756-b195-26164cb2b2a4",
+        "locale": "en-US",
+        "timestamp": "2023-03-26T11:27:16Z",
+        "intent": {
+            "name": "CloseInterviewIntent",
+            "confirmationStatus": "NONE"
+        }
+    }
+}

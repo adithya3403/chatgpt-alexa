@@ -1,0 +1,253 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "interview helper",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "SelectTopicIntent",
+                    "slots": [
+                        {
+                            "name": "topic",
+                            "type": "TOPICS"
+                        }
+                    ],
+                    "samples": [
+                        "topic is {topic}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": [
+                        "okay",
+                        "sure",
+                        "yes"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": [
+                        "nope",
+                        "wait",
+                        "no"
+                    ]
+                },
+                {
+                    "name": "CancelOrStopIntent",
+                    "slots": [],
+                    "samples": [
+                        "stop",
+                        "cancel",
+                        "nevermind"
+                    ]
+                },
+                {
+                    "name": "YesNoIntent",
+                    "slots": [
+                        {
+                            "name": "response",
+                            "type": "Response"
+                        }
+                    ],
+                    "samples": [
+                        "{response}"
+                    ]
+                },
+                {
+                    "name": "FirstAnswerIntent",
+                    "slots": [
+                        {
+                            "name": "answerone",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "the first answer is {answerone}",
+                        "my first answer is {answerone}",
+                        "I think the first answer is {answerone}",
+                        "I believe the first answer is {answerone}",
+                        "first answer is {answerone}"
+                    ]
+                },
+                {
+                    "name": "SecondAnswerIntent",
+                    "slots": [
+                        {
+                            "name": "answertwo",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "my second answer is {answertwo}",
+                        "I think the second answer is {answertwo}",
+                        "I believe the second answer is {answertwo}",
+                        "the second answer is {answertwo}"
+                    ]
+                },
+                {
+                    "name": "ThirdAnswerIntent",
+                    "slots": [
+                        {
+                            "name": "answerthree",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "my third answer is {answerthree}",
+                        "I think the third answer is {answerthree}",
+                        "I believe the third answer is {answerthree}",
+                        "the third answer is {answerthree}"
+                    ]
+                },
+                {
+                    "name": "FourthAnswerIntent",
+                    "slots": [
+                        {
+                            "name": "answerfour",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "my fourth answer is {answerfour}",
+                        "I think the fourth answer is {answerfour}",
+                        "I believe the fourth answer is {answerfour}",
+                        "the fourth answer is {answerfour}"
+                    ]
+                },
+                {
+                    "name": "FifthAnswerIntent",
+                    "slots": [
+                        {
+                            "name": "answerfive",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "my fifth answer is {answerfive}",
+                        "I think the fifth answer is {answerfive}",
+                        "I believe the fifth answer is {answerfive}",
+                        "the fifth answer is {answerfive}"
+                    ]
+                },
+                {
+                    "name": "CloseInterviewIntent",
+                    "slots": [],
+                    "samples": [
+                        "close interview"
+                    ]
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "LoginIntent",
+                    "slots": [
+                        {
+                            "name": "loginid",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "the login id is {loginid}",
+                        "login id is {loginid}",
+                        "my login id is {loginid}",
+                        "{loginid} is my login id",
+                        "{loginid} is login id"
+                    ]
+                },
+                {
+                    "name": "PasswordIntent",
+                    "slots": [
+                        {
+                            "name": "password",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "the password is {password}",
+                        "password is {password}",
+                        "my password is {password}",
+                        "{password} is my password",
+                        "{password} is password"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "Response",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "yes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "no"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "TOPICS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Machine Learning"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Python"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Database Management Systems"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Data Structures"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Java"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Operating systems"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
