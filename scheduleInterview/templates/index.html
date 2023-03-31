@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Flask App</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        <form method="POST" action="{{ url_for('submit') }}">
+            <h1>Interview Scheduler</h1>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="topic">Topic:</label>
+            <select id="topic" name="topic" required>
+                <option value="" disabled selected>Select Topic</option>
+                {% for topic in topics %}
+                <option value="{{ topic }}">{{ topic }}</option>
+                {% endfor %}
+            </select>
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty" name="difficulty" required>
+                <option value="" disabled selected>Select Difficulty</option>
+                {% for difficulty in difficulties %}
+                <option value="{{ difficulty }}">{{ difficulty }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+
+</html>

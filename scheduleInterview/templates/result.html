@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Flask App</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        <div class="card">
+            <h2>Interview Details</h2>
+            <h4>Please remember your id and password<br>We will ask them during your interview</h4>
+            <p>Name: {{ name }}</p>
+            <p>Topic: {{ topic }}</p>
+            <p>Difficulty: {{ difficulty }}</p>
+            <p>ID: {{ id }}</p>
+            <p>Password: {{ password }}</p>
+            <div class="btn-container">
+                <div class="clipboard">
+                    <button class="copy-btn" onclick="copyToClipboard()">Copy to clipboard</button>
+                    <span id="message"></span>
+                </div>
+                <a href="/" class="register-btn">Register for new applicant</a>
+            </div>
+        </div>
+
+        <script>
+            function copyToClipboard() {
+                var copyText = "Name: {{ name }}\nID: {{ id }}\nPassword: {{ password }}\nTopic: {{ topic }}\nDifficulty: {{ difficulty }}";
+                navigator.clipboard.writeText(copyText);
+                document.getElementById("message").innerHTML = "Copied!";
+            }
+
+            window.onunload = function () {
+                location.replace("/");
+            };
+        </script>
+    </body>
+
+</html>
