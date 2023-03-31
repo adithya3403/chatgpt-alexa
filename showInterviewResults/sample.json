@@ -1,0 +1,34 @@
+{
+    "studentName": { "type": "String" },
+    "Login ID": { "type": "Number" },
+    "Password": { "type": "String" },
+    "topic": { "type": "String" },
+    "questions": {
+        "question1": {
+            "question": { "type": "String" },
+            "studentAns": { "type": "String" },
+            "rating": { "type": "Number" }
+        },
+        "question2": {
+            "question": { "type": "String" },
+            "studentAns": { "type": "String" },
+            "rating": { "type": "Number" }
+        },
+        "question3": {
+            "question": { "type": "String" },
+            "studentAns": { "type": "String" },
+            "rating": { "type": "Number" }
+        },
+        "question4": {
+            "question": { "type": "String" },
+            "studentAns": { "type": "String" },
+            "rating": { "type": "Number" }
+        },
+        "question5": {
+            "question": { "type": "String" },
+            "studentAns": { "type": "String" },
+            "rating": { "type": "Number" }
+        }
+    },
+    "rating": { "type": "Number" }
+}
