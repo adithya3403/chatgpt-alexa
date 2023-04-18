@@ -2,6 +2,7 @@ import json
 import openai
 import pymongo
 import logging
+import datetime
 from ask_sdk_model.interfaces.alexa.presentation.apl.render_document_directive import RenderDocumentDirective
 from ask_sdk_core.skill_builder import SkillBuilder
 from ask_sdk_core.dispatch_components import (
@@ -101,6 +102,9 @@ class LaunchRequestHandler(AbstractRequestHandler):
         return is_request_type("LaunchRequest")(handler_input)
 
     def handle(self, handler_input):
+        start_time = datetime.datetime.now()
+        start_time = start_time + datetime.timedelta(hours=5, minutes=30) # indian time
+        handler_input.attributes_manager.session_attributes["start_time"] = str(start_time)
         speech_text = "Welcome to the virtual interview! Please enter your login ID."
         reprompt_text = "Please enter your login ID to start the interview."
         should_end_session = False
@@ -230,7 +234,7 @@ class FirstAnswerIntentHandler(AbstractRequestHandler):
         answer1 = handler_input.request_envelope.request.intent.slots["answerone"].value
         handler_input.attributes_manager.session_attributes['answer1'] = answer1
         question2=handler_input.attributes_manager.session_attributes['question2']
-        speech_text = f"You said '{answer1}'. Second question: " + question2 + " You can say 'the second answer is' and then your answer."
+        speech_text = f"Second question: " + question2 + " You can say 'the second answer is' and then your answer."
         reprompt_text = "You can say next to close this interview."
         should_end_session = False
 
@@ -259,7 +263,7 @@ class SecondAnswerIntentHandler(AbstractRequestHandler):
         answer2 = handler_input.request_envelope.request.intent.slots["answertwo"].value
         handler_input.attributes_manager.session_attributes['answer2'] = answer2
         question3=handler_input.attributes_manager.session_attributes['question3']
-        speech_text = f"You said '{answer2}'. Third question: " + question3 + " You can say 'the third answer is' and then your answer."
+        speech_text = f"Third question: " + question3 + " You can say 'the third answer is' and then your answer."
         reprompt_text = "You can say next to close this interview."
         should_end_session = False
 
@@ -288,7 +292,7 @@ class ThirdAnswerIntentHandler(AbstractRequestHandler):
         answer3 = handler_input.request_envelope.request.intent.slots["answerthree"].value
         handler_input.attributes_manager.session_attributes['answer3'] = answer3
         question4=handler_input.attributes_manager.session_attributes['question4']
-        speech_text = f"You said '{answer3}'. Fourth question: " + question4 + " You can say 'the fourth answer is' and then your answer."
+        speech_text = f"Fourth question: " + question4 + " You can say 'the fourth answer is' and then your answer."
         reprompt_text = "You can say next to close this interview."
         should_end_session = False
 
@@ -317,7 +321,7 @@ class FourthAnswerIntentHandler(AbstractRequestHandler):
         answer4 = handler_input.request_envelope.request.intent.slots["answerfour"].value
         handler_input.attributes_manager.session_attributes['answer4'] = answer4
         question5=handler_input.attributes_manager.session_attributes['question5']
-        speech_text = f"You said '{answer4}'. Fifth question: " + question5 + " You can say 'the fifth answer is' and then your answer."
+        speech_text = f"Last question: " + question5 + " You can say 'the fifth answer is' and then your answer."
         reprompt_text = "You can say next to close this interview."
         should_end_session = False
 
@@ -345,7 +349,7 @@ class FifthAnswerIntentHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         answer5 = handler_input.request_envelope.request.intent.slots["answerfive"].value
         handler_input.attributes_manager.session_attributes['answer5'] = answer5
-        speech_text = f"You said '{answer5}'. You have answered all the questions! You can say 'close interview' to close this interview."
+        speech_text = f"You have answered all the questions! You can say 'close interview' to close this interview."
         reprompt_text = "You can say next to close this interview."
         should_end_session = False
 
@@ -371,10 +375,10 @@ class CloseInterviewIntentHandler(AbstractRequestHandler):
         return is_intent_name("CloseInterviewIntent")(handler_input)
 
     def handle(self, handler_input):
-        rating=addToDB(handler_input)
+        rating = addToDB(handler_input)
         session_attributes = handler_input.attributes_manager.session_attributes
-        name=session_attributes["name"]
-        speech_text=f"Your score is {rating}. Thank you for your time. Goodbye {name}!"
+        name = session_attributes["name"]
+        speech_text = f"Your score is {rating}. Thank you for your time. Goodbye {name}!"
         reprompt_text = "Goodbye!"
         should_end_session = True
         response = build_speechlet_response(speech_text, reprompt_text, should_end_session)
@@ -427,6 +431,20 @@ def addToDB(handler_input):
     student_name = session_attributes["name"]
     loginid=session_attributes["loginid"]
     password=session_attributes["password"]
+    
+    start_time = session_attributes["start_time"]
+    start_time = datetime.datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S.%f")
+    start_time=start_time.strftime("%Y-%m-%d %H:%M")
+    print(start_time)
+    end_time=datetime.datetime.now()
+    end_time=end_time+datetime.timedelta(hours=5, minutes=30) # indian time
+    end_time=end_time.strftime("%Y-%m-%d %H:%M")
+    print(end_time)
+    end=end_time
+    time_diff=datetime.datetime.strptime(end_time, "%Y-%m-%d %H:%M")-datetime.datetime.strptime(start_time, "%Y-%m-%d %H:%M")
+    time_taken_float=time_diff.seconds/60
+    time_taken=str(int(time_taken_float))+" minutes"
+    print(time_taken)
 
     question1= session_attributes["question1"]
     question2= session_attributes["question2"]
@@ -445,6 +463,7 @@ def addToDB(handler_input):
     score3= session_attributes["score3"]
     score4= session_attributes["score4"]
     score5= session_attributes["score5"]
+
     scores=[]
     scores.append(score1)
     scores.append(score2)
@@ -453,7 +472,6 @@ def addToDB(handler_input):
     scores.append(score5)
 
     avg_score=sum(scores)/len(scores)
-    
     result = {
         "studentName":student_name,
         "LoginID": loginid,
@@ -482,6 +500,9 @@ def addToDB(handler_input):
                 "rating": score5
             }
         },
+        "startTime": start_time,
+        "endTime": end,
+        "duration": time_taken,
         "rating": avg_score
     }
     collection.insert_one(result)
