@@ -54,7 +54,7 @@ const UserList = () => {
                             <tr>
                                 <th className="has-text-centered">No</th>
                                 <th className="has-text-centered">Name</th>
-                                <th className="has-text-centered">Topics</th>
+                                <th className="has-text-centered">Topic</th>
                                 <th className="has-text-centered">Rating</th>
                                 <th className="has-text-centered">Actions</th>
                             </tr>
@@ -82,7 +82,7 @@ const UserList = () => {
                                             <td colSpan="5">
                                                 <div
                                                     style={{
-                                                        padding: "15px",
+                                                        padding: "20px",
                                                         border: "2px solid #ccc",
                                                         borderRadius: "10px",
                                                     }}>
@@ -90,6 +90,9 @@ const UserList = () => {
                                                     <p><strong>Login ID:</strong> {user.LoginID}</p>
                                                     <p><strong>Password:</strong> {user.Password}</p>
                                                     <p><strong>Topic:</strong> {user.topic}</p>
+                                                    <p><strong>Start Time:</strong> {user.startTime}</p>
+                                                    <p><strong>End Time:</strong> {user.endTime}</p>
+                                                    <p><strong>Duration:</strong> {user.duration}</p>
                                                     <p><strong>Final Score:</strong> {user.rating}</p>
                                                     <p>
                                                         <strong>Questions:</strong>
@@ -98,14 +101,12 @@ const UserList = () => {
                                                                 <li key={key}>
                                                                     <p>
                                                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        <strong>Question:</strong> {value.question}</p>
-                                                                    <p>
+                                                                        <strong>Question:</strong> {value.question}<br></br>
                                                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        <strong>Answer:</strong> {value.studentAns}</p>
-                                                                    <p>
+                                                                        <strong>Answer:</strong> {value.studentAns}<br></br>
                                                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        <strong>Rating:</strong> {value.rating}</p>
-                                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        <strong>Rating:</strong> {value.rating}
+                                                                    </p>
                                                                 </li>
                                                             ))}
                                                         </ul>
