@@ -103,7 +103,7 @@ async function createJSON(topic, question, variation, chatGPTAns, studentAns, sc
     // write into json file
     const data = {
         "topic": topic,
-        "studentName": "Adithya",
+        "studentName": "student1",
         "question": question,
         "chatGPTAns": chatGPTAns,
         "studentAns": studentAns,

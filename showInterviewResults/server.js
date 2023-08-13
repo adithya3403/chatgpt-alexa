@@ -93,7 +93,7 @@ const Data = mongoose.model('results', new mongoose.Schema({
 }));
 
 
-mongoose.connect("mongodb+srv://adithya:adithya3403@cluster0.krmnoey.mongodb.net/interview", {
+mongoose.connect(process.env.MONGODB_RESULTS_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {

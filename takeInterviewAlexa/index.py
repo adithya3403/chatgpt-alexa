@@ -17,6 +17,12 @@ sb = SkillBuilder()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+with open('config.json') as f:
+    config = json.load(f)
+    MONGODB_URI=config['MONGODB_URI']
+    DB_NAME=config['DB_NAME']
+    COLLECTION_NAME=config['COLLECTION_NAME']
+
 topics = [
     "machine learning", "python",
     "database management system", 
@@ -146,7 +152,7 @@ class PasswordIntentHandler(AbstractRequestHandler):
         password = slots["password"].value
         
         # check if the login credentials are valid by querying the database
-        client = pymongo.MongoClient("mongodb+srv://adithya:adithya3403@cluster0.krmnoey.mongodb.net/login")
+        client = pymongo.MongoClient(MONGODB_URI)
         db = client['login']
         collection = db['users']
         user = collection.find_one({'ID': loginid, 'Password': password})
@@ -387,7 +393,7 @@ class CloseInterviewIntentHandler(AbstractRequestHandler):
 
 
 def getScore(stud_ans, chatgpt_ans):
-    openai.api_key_path="./apikey.txt"
+    openai.api_key_path="./apikey.txt" # create a file named apikey.txt and place your api key in it
     def generatePrompt(ans1, ans2):
         return "Below is a sentence and array of strings. \
             Check if the sentence means the same as those other strings. \
@@ -421,10 +427,10 @@ def getScore(stud_ans, chatgpt_ans):
 
 def addToDB(handler_input):
     import pymongo
-    url="mongodb+srv://adithya:adithya3403@cluster0.krmnoey.mongodb.net/interview"
+    url=MONGODB_URI
     client = pymongo.MongoClient(url)
-    db = client["interview"]
-    collection = db["results"]
+    db = client[DB_NAME]
+    collection = db[COLLECTION_NAME]
     session_attributes = handler_input.attributes_manager.session_attributes
 
     topic = session_attributes["topic"]

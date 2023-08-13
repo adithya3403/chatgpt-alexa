@@ -1,14 +1,24 @@
-from flask import Flask, render_template, request, url_for, redirect
+import json
 import random
 import string
+
 import pymongo
+from flask import Flask, redirect, render_template, request, url_for
 from pymongo import MongoClient
 
 app = Flask(__name__)
 
-client = pymongo.MongoClient("mongodb+srv://adithya:adithya3403@cluster0.krmnoey.mongodb.net/?retryWrites=true&w=majority")
-db = client["login"]
-users_collection = db["users"]
+# create a json file "config.json" with the database name, collection name and mongodb uri
+# replace mongodb uri with your own mongodb ATLAS URI
+with open('config.json') as f:
+    config = json.load(f)
+    MONGODB_URI=config['MONGODB_URI']
+    DB_NAME=config['DB_NAME']
+    COLLECTION_NAME=config['COLLECTION_NAME']
+
+client = pymongo.MongoClient(MONGODB_URI)
+db = client[DB_NAME]
+users_collection = db[COLLECTION_NAME]
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
